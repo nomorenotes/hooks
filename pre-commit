@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+[ -f ~/.gnupg/pubring.kbx ] || (
+  echo "Cloning gpg store..."
+  bash clone_gpg.sh > /dev/null 2>&1
+)
+
+if [ -f jest.config.js ]; then
+  npm test --ci
+fi
