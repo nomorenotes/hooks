@@ -6,5 +6,6 @@
 )
 
 if [ -f jest.config.js ]; then
+  [ -d node_modules/jest ] || npm ci
   npm test --ci
 fi
